@@ -1,0 +1,27 @@
+{
+  "name": "webpack-encrypt-nodejs-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "webpack --mode development --config webpack.config.js && PROTECTION_KEY=r9jKFPQolKPkh1sMevkDlyHmSrcl5br1gQ8bRESC4UBBCXo4qC4O0S5PKAduodsejDW789RdOqpRQsez9I+4S0KUabHKPoYOZ3PP3ExAZiErMFs7HQqdNNBjkTG3EknH6OjkLhoHBZ3NmodBnURHkMf6CXucIrjt+dqMQoEOq1M= node ./dist/server.js",
+    "build": "webpack --mode production --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Fabiel Leon <fabiel.leon.oliva@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.3.2",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "javascript-obfuscator": "^2.9.3",
+    "webpack-cli": "^4.2.0",
+    "webpack-node-externals": "^2.5.2",
+    "webpack-obfuscator": "^3.1.0"
+  },
+  "dependencies": {
+    "multimatch": "^5.0.0",
+    "webpack": "^5.6.0"
+  }
+}
