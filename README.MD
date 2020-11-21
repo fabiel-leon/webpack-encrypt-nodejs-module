@@ -1,6 +1,6 @@
 # encrypt-nodejs-module-webpack-plugin
 
-This is a webpack plugin that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencription key.
+This is a  webpack plugin (`webpack >= 5`) that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencription key.
 
 ## how to use it
 
@@ -31,7 +31,7 @@ const webpack = require("webpack");
 const fs = require("fs");
 const nodeExternals = require("webpack-node-externals");
 const JavaScriptObfuscator = require("webpack-obfuscator");
-const EncryptModule = require("encrypt-nodejs-module-webpack-plugin");
+const EncryptModule = require("webpack-encrypt-nodejs-module");
 const CopyPlugin = require("copy-webpack-plugin");
 // const HtmlWebPackPlugin = require('html-webpack-plugin');
 
@@ -66,7 +66,7 @@ module.exports = {
   plugins: [
     new EncryptModule({
       algorithm: 'aes-192-cbc', //default
-      keylen: 24 // default key length, this depend of algorithm
+      keylen: 24, // default key length, this depend of algorithm
       ivlen: 16, //  default initialization vector length, this depend of algorithm
       password: "copy here in one line the generated password with the command -> openssl rand -base64 128", // this is used to generate a key
       // password: 'r9jKFPQolKPkh1sMevkDlyHmSrcl5br1gQ8bRESC4UBBCXo4qC4O0S5PKAduodsejDW789RdOqpRQsez9I+4S0KUabHKPoYOZ3PP3ExAZiErMFs7HQqdNNBjkTG3EknH6OjkLhoHBZ3NmodBnURHkMf6CXucIrjt+dqMQoEOq1M=',
