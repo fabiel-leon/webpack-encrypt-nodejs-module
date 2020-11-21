@@ -7,7 +7,32 @@
     "test": "webpack --mode development --config webpack.config.js && PROTECTION_KEY=r9jKFPQolKPkh1sMevkDlyHmSrcl5br1gQ8bRESC4UBBCXo4qC4O0S5PKAduodsejDW789RdOqpRQsez9I+4S0KUabHKPoYOZ3PP3ExAZiErMFs7HQqdNNBjkTG3EknH6OjkLhoHBZ3NmodBnURHkMf6CXucIrjt+dqMQoEOq1M= node ./dist/server.js",
     "build": "webpack --mode production --config webpack.config.js"
   },
-  "keywords": [],
+  "keywords": [
+    "webpack",
+    "encrypt",
+    "crypt",
+    "decrypt",
+    "environment variable",
+    "encode",
+    "decode",
+    "nodejs",
+    "module",
+    "obfuscate",
+    "hide",
+    "secure",
+    "key",
+    "password",
+    "encryption",
+    "symmetric encryption"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiel-leon/webpack-encrypt-nodejs-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fabiel-leon/webpack-encrypt-nodejs-module/issues"
+  },
+  "homepage": "https://github.com/fabiel-leon/webpack-encrypt-nodejs-module#readme",
   "author": "Fabiel Leon <fabiel.leon.oliva@gmail.com>",
   "license": "ISC",
   "devDependencies": {

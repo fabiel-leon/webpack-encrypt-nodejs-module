@@ -1,4 +1,4 @@
-# encrypt-nodejs-module-webpack-plugin
+# webpack-encrypt-nodejs-module
 
 This is a  webpack plugin (`webpack >= 5`) that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencription key.
 
