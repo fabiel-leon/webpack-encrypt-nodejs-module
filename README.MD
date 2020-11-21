@@ -1,13 +1,13 @@
 # webpack-encrypt-nodejs-module
 
-This is a  webpack plugin (`webpack >= 5`) that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencription key.
+This is a  webpack plugin (`webpack >= 5`) that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencryption key.
 
 ## how to use it
 
 add it to a webpack project
 
 ```shell
-npm i encrypt-nodejs-module-webpack-plugin -D
+npm i webpack-encrypt-nodejs-module -D
 ```
 
 if you are creating a webpack configuration from zero use this
@@ -22,8 +22,7 @@ generate a password
 openssl rand -base64 128
 ```
 
-then create a webpack configuration file or modify yours
-webpack.config.js
+then create a webpack.config.js configuration file or modify yours
 
 ```js
 const path = require("path");
