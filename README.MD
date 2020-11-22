@@ -1,6 +1,6 @@
 # webpack-encrypt-nodejs-module
 
-This is a  webpack plugin (`webpack >= 5`) that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencryption key.
+This is a webpack plugin (`webpack >= 5`) that creates an encrypted bundle nodejs module that will be decrypted at runtime on server using an environment variable as the desencryption key.
 
 ## how to use it
 
@@ -64,14 +64,16 @@ module.exports = {
   // },
   plugins: [
     new EncryptModule({
-      algorithm: 'aes-192-cbc', //default
+      algorithm: "aes-192-cbc", //default
       keylen: 24, // default key length, this depend of algorithm
       ivlen: 16, //  default initialization vector length, this depend of algorithm
-      password: "copy here in one line the generated password with the command -> openssl rand -base64 128", // this is used to generate a key
+      password:
+        "copy here in one line the generated password with the command -> openssl rand -base64 128", // this is used to generate a key
       // password: 'r9jKFPQolKPkh1sMevkDlyHmSrcl5br1gQ8bRESC4UBBCXo4qC4O0S5PKAduodsejDW789RdOqpRQsez9I+4S0KUabHKPoYOZ3PP3ExAZiErMFs7HQqdNNBjkTG3EknH6OjkLhoHBZ3NmodBnURHkMf6CXucIrjt+dqMQoEOq1M=',
       envVar: "PROTECTION_KEY", // environment varible where password will be obtained at runtime in server
     }),
-    new JavaScriptObfuscator({
+    new JavaScriptObfuscator(
+      {
         // obfuscate code first
         unicodeEscapeSequence: true,
         rotateUnicodeArray: true,
@@ -99,16 +101,16 @@ then run
 npm run build
 ```
 
-To test the result run node with the password in an environment variable
+you should see the final result in dist folder
+
+To test the result execute nodejs with the password in an environment variable called `varName` which is by default `PROTECTION KEY`
 
 ```shell
-PROTECTION_KEY=yourpassword-with-no-spaces node dist/server.js
+PROTECTION_KEY=yourpassword node dist/server.js
 ```
 
-you should see the final result in dist folder
 then use your selected method to upload your code to server
-then in your env variables add envVarName key (in this case is PUBLIC_KEY) put public.pem content
-You can use terminal or your hosting provider gui
+then in your env variables add envVarName key (in this case is PROTECTION_KEY) with the value of your password
 
 ```shell
 PROTECTION_KEY=content of your public key
